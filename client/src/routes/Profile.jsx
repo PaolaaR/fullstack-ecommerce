@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const MiPerfil = () => {
+export const Profile = () => {
   return (
     <div>MiPerfil</div>
   )

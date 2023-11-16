@@ -1,1 +1,36 @@
+body{
+    background-color: rgb(83, 80, 80);
+    color: rgb(245, 229, 229);
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner {
+    background-color: #f3b058; 
+    color: #36921f;
+    border: dotted 10px white;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+    margin: 20px auto;
+    width: 85%;
+  }
+
+    .carousel {
+        border: 15px solid #f3b058;
+        margin: 20px auto;
+        background-color: rgb(46, 129, 25);
+        width: 85%;
+        height: 50%;
+    }
+
+.carousel-img {
+    width: 50%; /* Ajusta según sea necesario */
+    max-width: 100%; /* Asegura que la imagen no se agrande más allá de su tamaño nativo */
+    height: 50%; /* Hace que la altura se ajuste proporcionalmente al ancho */
+    max-height: 100%; /* Asegura que la imagen no se agrande más allá de su tamaño nativo */
+  }
+  
+  
+
+
 

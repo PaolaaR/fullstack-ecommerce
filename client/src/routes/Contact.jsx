@@ -6,7 +6,6 @@ export const Contact = () => {
   return ( 
     <>
     <h1>Formulario de contacto</h1>
-    
         <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Email address</Form.Label>

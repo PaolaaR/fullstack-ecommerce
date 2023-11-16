@@ -6,19 +6,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
-export const NavBar= () => {
+export const Header= () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <div>
+    <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark" >
       <Container fluid>
-        <Navbar.Brand as={Link} to="/my-ecommerce/" >TEACUP DESIGN</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/Teacupdesign/" >TEACUP DESIGN</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-            <Nav.Link as={Link} to="/my-ecommerce/" href="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/my-ecommerce/catalogo">Catalogo</Nav.Link>
-            <Nav.Link as={Link} to="/my-ecommerce/login" >Login</Nav.Link>
-            <Nav.Link as={Link} to="/my-ecommerce/contact">Contacto</Nav.Link>
-            <Nav.Link as={Link} to="/my-ecommerce/checkout">Checkout</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/" href="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/catalog">Catalog</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/login" >Login</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/register">Register</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/product">Product</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/profile">Profile</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/contact">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/checkout">Checkout</Nav.Link>
 
 
 
@@ -48,5 +52,11 @@ export const NavBar= () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <div className="banner">
+    <Container fluid>
+      <p>DECEMBER SUPER SALE 20% OFF </p>
+    </Container>
+  </div>
+</div>
   );
-}
+};

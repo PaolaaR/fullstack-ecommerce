@@ -1,46 +1,37 @@
-import { Navigate,Route, Routes } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
-import { Checkout } from './routes/Checkout';
+import { Navigate,Route, Router, Routes } from 'react-router-dom';
+import { Header } from './routes/Header';
 import { Home } from './routes/Home';
 import { Contact } from './routes/Contact';
 import { Login } from './routes/Login';
-import { Catalogo } from './routes/Catalogo';
-import { MiPerfil } from './routes/MiPerfil';
-import { TazonUno } from './routes/TazonUno';
-import { TazonDos } from './routes/TazonDos';
-import { TazonTres } from './routes/TazonTres';
-import { TazonCuatro } from './routes/TazonCuatro';
-import { TazonCinco } from './routes/TazonCinco';
-import { TazonSeis } from './routes/TazonSeis';
-import { TazonSiete } from './routes/TazonSiete';
-import { TazonOcho } from './routes/TazonOcho';
+import { Register } from './routes/Register';
+import { Catalog } from './routes/Catalog';
+import { Profile } from './routes/Profile';
+import { Product } from './routes/Product';
+import { Checkout } from './routes/Checkout';
+import './App.css';
+
 
 
 export const App = () => {
   return (
+    <Router basename= "/Teacupdesign">
   <>
-    <NavBar/>
+     <Header /> 
+     <Catalog />
     <Routes>
-      <Route path="/my-ecommerce/" element={<Home />} />
-      <Route path="/my-ecommerce/catalogo" element={<Catalogo />} />
-      <Route path="/my-ecommerce/catalogo/:tazonUno" element={<TazonUno />} />
-      <Route path="/my-ecommerce/catalogo/:tazonDos" element={<TazonDos />} />
-      <Route path="/my-ecommerce/catalogo/:tazonTres" element={<TazonTres />} />
-      <Route path="/my-ecommerce/catalogo/:tazonCuatro" element={<TazonCuatro />} />
-      <Route path="/my-ecommerce/catalogo/:tazonCinco" element={<TazonCinco />} />
-      <Route path="/my-ecommerce/catalogo/:tazonSeis" element={<TazonSeis />} />
-      <Route path="/my-ecommerce/catalogo/:tazonSiete" element={<TazonSiete />} />
-      <Route path="/my-ecommerce/catalogo/:tazonOcho" element={<TazonOcho />} />
-      <Route path="/my-ecommerce/login" element={<Login />} />
-      <Route path="/my-ecommerce/login/:miperfil" element={<MiPerfil />} />
-      <Route path="/my-ecommerce/contact" element={<Contact />} />
-      <Route path="/my-ecommerce/checkout" element={<Checkout />} />
+      <Route path="/Teacupdesign/" element={<Home />} />
+      <Route path="/Teacupdesign/catalog" element={<Catalog />} />
+      <Route path="/Teacupdesign/login" element={<Login />} />
+      <Route path="/Teacupdesign/login/:profile" element={<Profile />} />
+      <Route path="/Teacupdesign/contact" element={<Contact />} />
+      <Route path="/Teacupdesign/register" element={<Register />} />
+      <Route path="/Teacupdesign/product" element={<Product />} />
+      <Route path="/Teacupdesign/checkout" element={<Checkout />} />
       
-      <Route path="/*" element={<Navigate to='/' />} />
+      <Route path="/*" element={<Navigate to='/Teacupdesign' />} />
     </Routes>
-
   </>
-
+  </Router>
   )
 }
 
