@@ -9,8 +9,8 @@ const auth = require('./middleware/authorization')
 
 const connectDB = require('./config/db')
 
-const Mug = require('./models/Mug')
-const User = require('./models/User')
+const Mug = require('./models/Mug.model')
+const User = require('./models/User.model')
 
 
 
@@ -30,7 +30,7 @@ app.use(express.json());
 // MERCADO PAGO
 
 const mercadopago = require("mercadopago")
-const { update } = require('./models/Mug')
+const { update } = require('./models/Mug.model')
 
 mercadopago.configure({
     access_token: "TEST-1692220363732658-111103-4d1a8c97cb67179282c33c457e4932c8-1545347358"

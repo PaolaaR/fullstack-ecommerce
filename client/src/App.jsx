@@ -14,12 +14,11 @@ import './App.css';
 
 export const App = () => {
   return (
-    <Router basename= "/Teacupdesign">
   <>
      <Header /> 
-     <Catalog />
+     <Product />
     <Routes>
-      <Route path="/Teacupdesign/" element={<Home />} />
+      <Route path="/Teacupdesign" element={<Home />} />
       <Route path="/Teacupdesign/catalog" element={<Catalog />} />
       <Route path="/Teacupdesign/login" element={<Login />} />
       <Route path="/Teacupdesign/login/:profile" element={<Profile />} />
@@ -28,10 +27,9 @@ export const App = () => {
       <Route path="/Teacupdesign/product" element={<Product />} />
       <Route path="/Teacupdesign/checkout" element={<Checkout />} />
       
-      <Route path="/*" element={<Navigate to='/Teacupdesign' />} />
+      <Route path="/*" element={<Navigate to='/' />} />
     </Routes>
   </>
-  </Router>
   )
 }
 
