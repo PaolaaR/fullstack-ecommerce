@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { loginService, signupService } from "./services/user";
-import { UserContext } from "./context/UserContext";
+import { loginService, signupService } from "../services/user"
+import { UserContext } from "../context/UserContext";
 
 export const Login = () => {
     const [isMember, setIsMember] = useState(false);
