@@ -8,6 +8,7 @@ import { Catalog } from './routes/Catalog';
 import { Profile } from './routes/Profile';
 import { Product } from './routes/Product';
 import { Checkout } from './routes/Checkout';
+import{ Footer } from './routes/Footer';
 import './App.css';
 
 
@@ -16,7 +17,6 @@ export const App = () => {
   return (
   <>
      <Header /> 
-     <Product />
     <Routes>
       <Route path="/Teacupdesign" element={<Home />} />
       <Route path="/Teacupdesign/catalog" element={<Catalog />} />
@@ -26,10 +26,13 @@ export const App = () => {
       <Route path="/Teacupdesign/register" element={<Register />} />
       <Route path="/Teacupdesign/product" element={<Product />} />
       <Route path="/Teacupdesign/checkout" element={<Checkout />} />
-      
+     
       <Route path="/*" element={<Navigate to='/' />} />
     </Routes>
+    <Product />
+      <Footer />
   </>
+ 
   )
 }
 
