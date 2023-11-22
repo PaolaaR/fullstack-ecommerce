@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { loginService, signupService } from "../services/user"
+import { loginService, signupService } from "../services/user";
 import { UserContext } from "../context/User/UserContext";
 
 export const Login = () => {

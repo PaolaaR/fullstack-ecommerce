@@ -1,5 +1,5 @@
 
-export const reducers = (globalState, action) => {
+export const UserReducer = (globalState, action) => {
 
     switch(action.type){
 
@@ -41,5 +41,3 @@ export const reducers = (globalState, action) => {
 
 }
 
-
-export default reducers

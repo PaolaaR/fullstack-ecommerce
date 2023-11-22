@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
-import UserContext from '../../context/User/UserContext'
-import UserReducer from '../../context/User/UserReducer'
+import {UserContext} from '../../context/User/UserContext'
+import {UserReducer} from '../../context/User/UserReducer'
 
 import axiosClient from "../../config/axios"
 

@@ -1,6 +1,5 @@
 import { useReducer } from 'react'
-
-import axiosClient from "../../config/axios"
+import axios from 'axios'
 
 import ProductContext from '../Product/ProductContext'
 import ProductReducer from "../Product/ProductReducer"
