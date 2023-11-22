@@ -1,11 +1,11 @@
 import { useReducer } from 'react'
 
-import axiosClient from "./../../config/axios"
+import axiosClient from "../../config/axios"
 
-import ProductContext from "./ProductContext"
-import ProductReducer from "./ProductReducer"
+import ProductContext from '../Product/ProductContext'
+import ProductReducer from "../Product/ProductReducer"
 
-const ProductState = (props) => {
+export const ProductState = (props) => {
 
     const initialState = {
         mugs: [],

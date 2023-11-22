@@ -1,36 +1,55 @@
-import { Navigate,Route, Router, Routes } from 'react-router-dom';
-import { Header } from './routes/Header';
-import { Home } from './routes/Home';
-import { Contact } from './routes/Contact';
-import { Login } from './routes/Login';
-import { Register } from './routes/Register';
-import { Catalog } from './routes/Catalog';
-import { Profile } from './routes/Profile';
-import { Product } from './routes/Product';
-import { Checkout } from './routes/Checkout';
-import{ Footer } from './routes/Footer';
+import { Navigate,Route,Routes } from 'react-router-dom';
+import { Header } from './components/Header';
+import { Home } from './components/Home';
+import { Contact } from './components/Contact';
+import { Login } from './components/Login';
+import { Register } from './components/Register';
+import { Catalog } from './components/Catalog';
+import { Profile } from './components/Profile';
+import { BestSellers} from './components/BestSellers';
+import { Checkout } from './components/Checkout';
+import{ Footer } from './components/Footer';
+import { Product } from './components/Product'
 import './App.css';
+
+import ProductState from '../src/context/Product/ProductState'
+import UserState from '../src/context/User/UserState'
+import LayoutState from '../src/context/Layout/LayoutState'
+
+import AuthRoute from '../src/routes/AuthRoute'
+import PrivateRoute from '../src/routes/PrivateRoute'
+import PublicRoute from '../src/routes/PublicRoute';
 
 
 
 export const App = () => {
   return (
   <>
+  <LayoutState>
+    <ProductState>
+      <UserState>
      <Header /> 
     <Routes>
-      <Route path="/Teacupdesign" element={<Home />} />
-      <Route path="/Teacupdesign/catalog" element={<Catalog />} />
-      <Route path="/Teacupdesign/login" element={<Login />} />
-      <Route path="/Teacupdesign/login/:profile" element={<Profile />} />
-      <Route path="/Teacupdesign/contact" element={<Contact />} />
-      <Route path="/Teacupdesign/register" element={<Register />} />
-      <Route path="/Teacupdesign/product" element={<Product />} />
+      <PrivateRoute exact path="/profile" element={<Profile />} />
+
+      <AuthRoute exact path="/Teacupdesign/login" element={<Login />} />
+      <AuthRoute exact path="/Teacupdesign/register" element={<Register />} />
+
+      <PublicRoute exact path="/Teacupdesign" element={<Home />} />
+      <PublicRoute exact path="/Teacupdesign/catalog" element={<Catalog />} />
+      
+      <PublicRoute exact path="/Teacupdesign/:productId" element={<Product />} />
+      <PublicRoute exact path="/Teacupdesign/contact" element={<Contact />} />
+      
+      <PublicRoute exact path="/Teacupdesign/bestsellers" element= {BestSellers} />
       <Route path="/Teacupdesign/checkout" element={<Checkout />} />
      
       <Route path="/*" element={<Navigate to='/' />} />
     </Routes>
-    <Product />
       <Footer />
+      </UserState>
+    </ProductState>
+  </LayoutState>
   </>
  
   )

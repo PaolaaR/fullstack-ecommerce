@@ -4,7 +4,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-export const Product = () => {
+export const BestSellers = () => {
   const [randomMugs, setRandomMugs] = useState([]);
 
   useEffect(() => {
@@ -13,10 +13,10 @@ export const Product = () => {
         const response = await axios.get('http://localhost:3005/get-mugs');
         const allMugs = response.data.mugs;
 
-        // Shuffle array de manera aleatoria
+        
         const shuffledMugs = allMugs.sort(() => Math.random() - 0.5);
 
-        // Tomar solo las primeras 4 tazas
+        
         const selectedMugs = shuffledMugs.slice(0, 4);
 
         setRandomMugs(selectedMugs);
@@ -40,7 +40,7 @@ export const Product = () => {
                 <Card.Title>{mug.name}</Card.Title>
                 <Card.Text>{mug.description}</Card.Text>
                 <Card.Text>{`Price: $${mug.price}`}</Card.Text>
-                <Button as={Link} to={`/product/${mug._id}`} variant="primary">
+                <Button as={Link} to={`/Teacupdesign/catalog/${mug._id}`} variant="primary">
               Ver más
             </Button>
               </Card.Body>
@@ -52,4 +52,4 @@ export const Product = () => {
   );
 };
 
-export default Product;
+export default BestSellers;

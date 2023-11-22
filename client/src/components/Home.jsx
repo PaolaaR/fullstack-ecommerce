@@ -2,6 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import navidad from '../assets/Navidad.jpg';
 import navidadFive from '../assets/NavidadFive.jpg';
 import navidadThree from '../assets/NavidadThree.jpg';
+import Product, { BestSellers } from './BestSellers';
 
 
 export const Home = () => {
@@ -41,6 +42,7 @@ export const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    <BestSellers />
     </div>
     
   );
