@@ -1,8 +1,7 @@
 import { useReducer } from 'react'
-import axios from 'axios'
-
 import ProductContext from '../Product/ProductContext'
 import ProductReducer from "../Product/ProductReducer"
+import axiosClient from "../../config/axios"
 
 export const ProductState = (props) => {
 

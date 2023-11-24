@@ -27,13 +27,13 @@ export const Catalog = () => {
   return (
     <div className="card-container">
       {mugs.map((mug) => (
-        <Card key={mug._id} style={{ width: '18rem', marginBottom: '20px' }}>
+        <Card key={mug._id} style={{ width: '18rem', margin: '10px', backgroundColor: "#f3b058" }}>
           <Card.Img variant="top" src={mug.image} />
           <Card.Body>
             <Card.Title>{mug.name}</Card.Title>
             <Card.Text>{mug.description}</Card.Text>
-            <Card.Text>Precio: ${mug.price}</Card.Text>
-            <Button as={Link} to={`/Teacupdesign/catalog/${mug._id}`} variant="primary">
+            <Card.Text>Price: ${mug.price}</Card.Text>
+            <Button as={Link} to={`/${mug._id}`} variant="primary">
               Ver más
             </Button>
           </Card.Body>

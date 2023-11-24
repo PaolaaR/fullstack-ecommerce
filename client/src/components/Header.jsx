@@ -6,12 +6,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
-export const Header= () => {
+export const Header= () => { 
   return (
     <div>
     <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark" >
       <Container fluid>
-        <Navbar.Brand as={Link} to="/Teacupdesign/" >TEACUP DESIGN</Navbar.Brand>
+        <img src="https://res.cloudinary.com/djymwd1fr/image/upload/ar_1:1,b_rgb:262c35,bo_34px_solid_rgb:e5962c,c_fill,g_auto,r_max,w_1000/v1700788025/logoteac_zu0o5i.png" alt="Logo-Teacup-Design" border="0" width="50" height="50" />
+        <Navbar.Brand as={Link} to="/Teacupdesign/"> TEACUP DESIGN </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>

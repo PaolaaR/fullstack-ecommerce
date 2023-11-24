@@ -29,12 +29,21 @@ export const BestSellers = () => {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1 style={{ marginBottom: '20px' }}>Best Sellers</h1>
+    <div 
+    style={{ 
+      textAlign: 'center', 
+      margin: "50px",
+      }}>
+      <h1 style={{ fontSize: "40px", fontWeight: "bold", color: "yellow", padding: "20px" }}> 🔥Best Sellers 🔥 </h1>
       {randomMugs.length > 0 && (
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div 
+        style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          flexWrap: 'wrap'
+         }}>
           {randomMugs.map((mug) => (
-            <Card key={mug._id} style={{ width: '18rem', margin: '10px' }}>
+            <Card key={mug._id} style={{ width: '18rem', margin: '10px 60px', backgroundColor: "#f3b058" }}>
               <Card.Img variant="top" src={mug.image} />
               <Card.Body>
                 <Card.Title>{mug.name}</Card.Title>

@@ -3,6 +3,7 @@ import navidad from '../assets/Navidad.jpg';
 import navidadFive from '../assets/NavidadFive.jpg';
 import navidadThree from '../assets/NavidadThree.jpg';
 import Product, { BestSellers } from './BestSellers';
+import { Summer } from './Summer';
 
 
 export const Home = () => {
@@ -43,6 +44,7 @@ export const Home = () => {
       </Carousel.Item>
     </Carousel>
     <BestSellers />
+    <Summer />
     </div>
     
   );

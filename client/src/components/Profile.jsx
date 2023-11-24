@@ -53,7 +53,7 @@ export const Profile = () => {
                                 <Form.Label>Tu nombre</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Nombre"
+                                    placeholder="Name"
                                     name="name"
                                     value={userForm.name}
                                     onChange={handleChange}
@@ -75,14 +75,12 @@ export const Profile = () => {
                                 <Form.Label>Tu correo</Form.Label>
                                 <Form.Control
                                     type="email"
-                                    placeholder="Correo electrónico"
+                                    placeholder="email"
                                     name="email"
                                     value={userForm.email}
                                     readOnly
                                 />
                             </Form.Group>
-
-                            {/* Agrega más campos según sea necesario */}
 
                             <Button variant="primary" type="submit">
                                 Guardar cambios

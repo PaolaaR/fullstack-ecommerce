@@ -6,13 +6,13 @@ export const Footer = () => {
     <footer className="bg-dark text-light text-center py-3">
       <Container>
         <Row className="d-flex align-items-center justify-content-center">
-          {/* Primera columna */}
+          
           <Col md={6}>
             <p>&copy; {new Date().getFullYear()} TEACUPDESIGN </p>
-            <p> Teléfono: +56 9 1234 5678</p>
-            <p> Horario de atención: 10:00 - 21:00 hrs</p>
-            <p> Email:teacupdesign@gmail.com</p>
-            <p> Síguenos en nuestras redes sociales</p>
+            <p> Phone: +56 9 1234 5678</p>
+            <p> Business Hours: 10:00 - 21:00 hrs</p>
+            <p> Email: teacupdesign@gmail.com</p>
+            <p> Follow Us!</p>
             <div>
               <a
                 href="https://www.facebook.com/"
@@ -39,9 +39,9 @@ export const Footer = () => {
             </div>
           </Col>
 
-          {/* Segunda columna */}
+        
           <Col md={6}>
-            <p>Encuéntranos en Google Maps</p>
+            <p>Find Us!</p>
             <div id="map-container">
               <iframe
                 title="Google Map"

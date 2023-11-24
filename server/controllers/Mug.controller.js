@@ -1,11 +1,11 @@
-const Post = require('../models/Mug.model')
+const Mug = require('../models/Mug.model')
 
-const createPost = async (req, res) => {
+const createMug = async (req, res) => {
     try {
-        const post = new Post(req.body)
-        const resp = await post.save()
+        const mug = new Mug (req.body)
+        const resp = await mug.save()
         return res.json({
-            message: 'Post was created successfully',
+            message: 'Mug was created successfully',
             detail: resp
         })
     } catch (error) {
@@ -16,11 +16,11 @@ const createPost = async (req, res) => {
     }
 }
 
-const getPosts = async (req, res) => {
+const getMugs = async (req, res) => {
     try {
-        const resp = await Post.find()
+        const resp = await Mug.find()
         return res.json({
-            message: "Posts",
+            message: "Mugs",
             detail: resp
         })
     } catch (error) {
@@ -31,4 +31,4 @@ const getPosts = async (req, res) => {
     }
 }
 
-module.exports = { createPost, getPosts }
+module.exports = { createMug, getMugs }
