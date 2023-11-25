@@ -33,7 +33,7 @@ export const Catalog = () => {
             <Card.Title>{mug.name}</Card.Title>
             <Card.Text>{mug.description}</Card.Text>
             <Card.Text>Price: ${mug.price}</Card.Text>
-            <Button as={Link} to={`/${mug._id}`} variant="primary">
+            <Button as={Link} to={`/Teacupdesign/${mug._id}`} variant="primary">
               Ver más
             </Button>
           </Card.Body>

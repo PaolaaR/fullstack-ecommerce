@@ -50,7 +50,7 @@ export const Profile = () => {
                     <div>
                         <Form onSubmit={sendData}>
                             <Form.Group controlId="formName">
-                                <Form.Label>Tu nombre</Form.Label>
+                                <Form.Label>Name</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Name"
@@ -61,10 +61,10 @@ export const Profile = () => {
                             </Form.Group>
 
                             <Form.Group controlId="formLastName">
-                                <Form.Label>Tus apellidos</Form.Label>
+                                <Form.Label>Last Name</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Apellidos"
+                                    placeholder="Last Name"
                                     name="lastname"
                                     value={userForm.lastname}
                                     onChange={handleChange}
@@ -72,7 +72,7 @@ export const Profile = () => {
                             </Form.Group>
 
                             <Form.Group controlId="formEmail">
-                                <Form.Label>Tu correo</Form.Label>
+                                <Form.Label>E-mail</Form.Label>
                                 <Form.Control
                                     type="email"
                                     placeholder="email"
@@ -83,7 +83,7 @@ export const Profile = () => {
                             </Form.Group>
 
                             <Button variant="primary" type="submit">
-                                Guardar cambios
+                                Save Changes
                             </Button>
                         </Form>
                     </div>

@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Contact } from './components/Contact';
 import { Login } from './components/Login'
+import { Register } from './components/Register'
 import { Catalog } from './components/Catalog';
 import { Profile } from './components/Profile';
 import { BestSellers} from './components/BestSellers';
@@ -28,6 +29,7 @@ export const App = () => {
       <Route path="/profile" element={<Profile />} />
 
       <Route path="/Teacupdesign/login" element={<Login />} />
+      <Route path="/Teacupdesign/register" element={<Register />} />
 
       <Route path="/Teacupdesign" element={<Home />} />
       <Route path="/Teacupdesign/catalog" element={<Catalog />} />

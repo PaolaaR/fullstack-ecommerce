@@ -1,5 +1,7 @@
 export const reducer = (globalState, action) => {
+
     switch (action.type) {
+      
       case "GET_MUGS":
         return {
           ...globalState,
@@ -19,7 +21,7 @@ export const reducer = (globalState, action) => {
           ...globalState,
           mug: [action.payload]
         };
-  
+        
       default:
         return globalState;
     }

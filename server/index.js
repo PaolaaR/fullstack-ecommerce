@@ -39,8 +39,6 @@ mercadopago.configure({
 
 // 3. RUTEO
 
-// A. GUITARRAS
-
 app.get("/get-mugs", async (req, res) => {
     try {
         const mugs = await Mug.find({})

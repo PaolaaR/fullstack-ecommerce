@@ -2,6 +2,7 @@ import { useReducer } from 'react'
 import ProductContext from '../Product/ProductContext'
 import ProductReducer from "../Product/ProductReducer"
 import axiosClient from "../../config/axios"
+import axios from 'axios'
 
 export const ProductState = (props) => {
 
@@ -18,8 +19,9 @@ export const ProductState = (props) => {
     const [globalState, dispatch] = useReducer(ProductReducer, initialState)
 
     const getMug = async (id) => {
-
-        const res = await axiosClient.get(`/get-mug/${id}`)
+        
+        const res = await axios.get(`http://localhost:3005/get-mug/${id}`)
+        // const res = await axiosClient.get(`/get-mug/${id}`)
 
         const mug = res.data.mug
 

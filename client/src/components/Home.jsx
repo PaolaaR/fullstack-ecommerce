@@ -16,8 +16,8 @@ export const Home = () => {
           src={navidad}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h3>Merry Christmas to All!</h3>
+        <Carousel.Caption className="text-success">
+          <h3 className="font-weight-bold">Merry Christmas to All!</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -26,8 +26,8 @@ export const Home = () => {
           src={navidadFive}
           alt="Second slide"
         />
-        <Carousel.Caption>
-          <h3>Let's Put Up The Christmas Tree</h3>
+        <Carousel.Caption className="text-success">
+          <h3 className="font-weight-bold">Let's Put Up The Christmas Tree</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -36,10 +36,10 @@ export const Home = () => {
           src={navidadThree}
           alt="Third slide"
         />
-        <Carousel.Caption>
-         <strong>
-         <h3>We Wish You a Colorful Christmas</h3>
-          </strong> 
+        <Carousel.Caption className="text-success">
+        
+         <h3 className="font-weight-bold" >We Wish You a Colorful Christmas</h3>
+          
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
