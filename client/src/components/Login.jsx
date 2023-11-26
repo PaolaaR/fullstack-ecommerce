@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
 import { loginService, signupService } from "../services/user";
 import { UserContext } from "../context/User/UserContext";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
-  const [isMember, setIsMember] = useState(false);
+  const [isMember, setIsMember] = useState(true);
   const { token, setToken } = useContext(UserContext);
+  const navigate = useNavigate(); // useNavigate instead of useHistory
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +22,8 @@ export const Login = () => {
     } else {
       const userData = await signupService(dataObject);
       console.log(userData);
+      // After successful registration, redirect to the register route
+      navigate("/Teacupdesign/register");
     }
   };
 
@@ -44,9 +48,11 @@ export const Login = () => {
         <button type="submit" style={{ backgroundColor: "#008000", color: "#f3b058", padding: "10px", borderRadius: "5px", cursor: "pointer" }}>Submit</button>
         <p style={{ marginTop: "15px", color: "#008000" }}>
           {isMember ? "Not a member yet?" : "Already a member?"}
-          <button type="button" onClick={() => setIsMember(!isMember)} style={{ backgroundColor: "#008000", color: "#f3b058", border: "none", padding: "5px", marginLeft: "5px", cursor: "pointer" }}>
-            {isMember ? "Register" : "Login"}
-          </button>
+          <Link to="/Teacupdesign/register" style={{ color: "#008000", textDecoration: "none" }}>
+            <button type="button" style={{ backgroundColor: "#008000", color: "#f3b058", border: "none", padding: "5px", marginLeft: "5px", cursor: "pointer" }}>
+              {isMember ? "Register" : "Login"}
+            </button>
+          </Link>
         </p>
       </form>
     </section>

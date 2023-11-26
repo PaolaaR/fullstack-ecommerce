@@ -34,13 +34,13 @@ export const App = () => {
       <Route path="/Teacupdesign" element={<Home />} />
       <Route path="/Teacupdesign/catalog" element={<Catalog />} />
       
-      <Route path="/Teacupdesign/:productId" element={<Product />} />
+      <Route path="/Teacupdesign/product/:productId" element={<Product />} />
       <Route path="/Teacupdesign/contact" element={<Contact />} />
       
       <Route path="/Teacupdesign/bestsellers" element= {BestSellers} />
       <Route path="/Teacupdesign/checkout" element={<Checkout />} />
      
-      <Route path="/*" element={<Navigate to='/' />} />
+      <Route path="/*" element={<Navigate to='/Teacupdesign' />} />
     </Routes>
       <Footer />
       </UserProvider>
