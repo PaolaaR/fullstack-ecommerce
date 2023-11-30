@@ -213,7 +213,7 @@ app.post("/user/login", async (req, res) => {
 
         // SI EL PASSWORD ES INCORRECTO, REGRESAMOS UN MENSAJE SOBRE ESTO
         if (!passChecked) {
-            return await res.status(400).json({ msg: "Password incorrecto" })
+            return await res.status(400).json({ msg: "Wrong password" })
         }
 
         // SI TODO CORRECTO, GENERAMOS UN JSON WEB TOKEN
@@ -255,7 +255,7 @@ app.get("/user/verify-user", auth, async (req, res) => {
 
     try {
         // CONFIRMAMOS QUE EL USUARIO EXISTA EN BASE DE DATOS Y RETORNAMOS SUS DATOS, EXCLUYENDO EL PASSWORD
-        const user = await User.findById(req.user.email).select("-password")
+        const user = await users.findById(req.user.email).select("-password")
         res.json({ user })
 
     } catch (error) {

@@ -1,46 +1,82 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import {UserContext} from '../context/User/UserContext';
+import { UserContext } from '../context/User/UserContext';
 
 export const Profile = () => {
-    const ctx = useContext(UserContext);
-    const { userSubmitForm, user } = ctx;
+  const ctx = useContext(UserContext)
 
-    const [userForm, setUserForm] = useState({
-        name: '',
-        lastname: '',
-        country: '',
-        address: '',
-        city: '',
-        state: '',
-        zipcode: '',
-        email: user.email,
-    });
+  const { userSubmitForm } = ctx
 
-    useEffect(() => {
-        setUserForm({
-            ...userForm,
-            name: user.name,
-            lastname: user.lastname,
-            country: user.country,
-            address: user.address,
-            city: user.city,
-            state: user.state,
-            zipcode: user.zipcode,
-        });
-    }, [user]);
+  const {
+      name,
+      email,
+      lastname,
+      country,
+      address,
+      city,
+      state,
+      zipcode
+  } = ctx.user
 
-    const handleChange = (event) => {
-        setUserForm({
-            ...userForm,
-            [event.target.name]: event.target.value,
-        });
-    };
+  const [userForm, setUserForm] = useState({
+      name: "",
+      lastname: "",
+      country: "",
+      address: "",
+      city: "",
+      state: "",
+      zipcode: "",
+      email
+  })
 
-    const sendData = (event) => {
-        event.preventDefault();
-        userSubmitForm(userForm);
-    };
+  let countries = [
+      "-----",
+      "México",
+      "Colombia",
+      "Perú",
+      "Chile",
+      "Otro país..."
+  ]
+
+  const handleChange = async (event) => {
+
+      setUserForm({
+          ...userForm,
+          [event.target.name]: event.target.value
+      })
+
+  }
+
+  const sendData = (event) => {
+
+      event.preventDefault()
+
+      userSubmitForm(userForm)
+
+  }
+
+  useEffect(() => {
+
+      const updateData = () => {
+
+          return setUserForm({
+              ...userForm,
+              name,
+              lastname,
+              country,
+              address,
+              city,
+              state,
+              zipcode
+          })
+
+      }
+
+      updateData()
+
+  }, [])
+
+
 
     return (
         <main className="mt-10">
@@ -48,7 +84,7 @@ export const Profile = () => {
                 <div className="relative">
                     <div className="h-1/2 bg-gray-100"></div>
                     <div>
-                        <Form onSubmit={sendData}>
+                        <Form onSubmit={(e) => sendData(e)}>
                             <Form.Group controlId="formName">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control

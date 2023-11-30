@@ -43,7 +43,7 @@ export const BestSellers = () => {
           flexWrap: 'wrap'
          }}>
           {randomMugs.map((mug) => (
-            <Card key={mug._id} style={{ width: '18rem', margin: '10px 60px', backgroundColor: "#f3b058" }}>
+            <Card key={mug._id} style={{ width: '18rem',border:"10px dotted yellow", margin:"45px", backgroundColor: "#f3b058" }}>
               <Card.Img variant="top" src={mug.image} />
               <Card.Body>
                 <Card.Title>{mug.name}</Card.Title>

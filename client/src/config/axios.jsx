@@ -1,7 +1,9 @@
-import axios from 'axios'
+import axios from 'axios';
+
+const baseURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3005';
 
 export const axiosClient = axios.create({
-    baseURL: "127.0.0.1:3005"
-})
+  baseURL,
+});
 
-export default axiosClient
+export default axiosClient;

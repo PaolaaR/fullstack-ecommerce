@@ -13,8 +13,12 @@ import { Product } from './components/Product'
 import './App.css';
 
 import ProductState from '../src/context/Product/ProductState'
+import UserState from '../src/context/User/UserState'
 import LayoutState from '../src/context/Layout/LayoutState'
-import { UserProvider } from './context/User/UserContext';
+
+import { AuthRoute } from './components/Routes/AuthRoute';
+import { PublicRoute } from './components/Routes/PublicRoute';
+import { PrivateRoute } from './components/Routes/PrivateRoute';
 
 
 
@@ -23,27 +27,31 @@ export const App = () => {
   <>
   <LayoutState>
     <ProductState>
-      <UserProvider>
-     <Header /> 
-    <Routes>
-      <Route path="/profile" element={<Profile />} />
+      <UserState>
+        <Header/>
+      <Routes>
+     
+    
+      <Route path="/Teacupdesign/profile" element={<PrivateRoute component= {Profile} />} />
 
-      <Route path="/Teacupdesign/login" element={<Login />} />
-      <Route path="/Teacupdesign/register" element={<Register />} />
+      <Route path="/Teacupdesign/login" element={<AuthRoute component= {Login} />} />
+      <Route path="/Teacupdesign/register" element={<AuthRoute component={Register} />} />
 
-      <Route path="/Teacupdesign" element={<Home />} />
-      <Route path="/Teacupdesign/catalog" element={<Catalog />} />
+      <Route path="/Teacupdesign" element={<PublicRoute component={Home} />} />
+      <Route path="/Teacupdesign/catalog" element={<PublicRoute component={Catalog} />} />
       
-      <Route path="/Teacupdesign/product/:productId" element={<Product />} />
-      <Route path="/Teacupdesign/contact" element={<Contact />} />
+      <Route path="/Teacupdesign/product/:productId" element={<PublicRoute component ={Product} />} />
+      <Route path="/Teacupdesign/contact" element={<PublicRoute component={Contact} />} />
       
-      <Route path="/Teacupdesign/bestsellers" element= {BestSellers} />
-      <Route path="/Teacupdesign/checkout" element={<Checkout />} />
+      <Route path="/Teacupdesign/bestsellers" element= {<PublicRoute component={BestSellers}/>} />
+      <Route path="/Teacupdesign/checkout" element={<PublicRoute component={Checkout} />} />
      
       <Route path="/*" element={<Navigate to='/Teacupdesign' />} />
-    </Routes>
+
+      </Routes>
+
       <Footer />
-      </UserProvider>
+      </UserState>
     </ProductState>
   </LayoutState>
   </>
