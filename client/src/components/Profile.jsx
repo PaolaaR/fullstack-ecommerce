@@ -3,100 +3,71 @@ import { Form, Button } from 'react-bootstrap';
 import { UserContext } from '../context/User/UserContext';
 
 export const Profile = () => {
-  const ctx = useContext(UserContext)
+  const ctx = useContext(UserContext);
 
-  const { userSubmitForm } = ctx
-
-  const {
-      name,
-      email,
-      lastname,
-      country,
-      address,
-      city,
-      state,
-      zipcode
-  } = ctx.user
+  const { userSubmitForm, user } = ctx; // Renombré user para evitar conflictos con el destructuring anterior
 
   const [userForm, setUserForm] = useState({
-      name: "",
-      lastname: "",
-      country: "",
-      address: "",
-      city: "",
-      state: "",
-      zipcode: "",
-      email
-  })
-
-  let countries = [
-      "-----",
-      "México",
-      "Colombia",
-      "Perú",
-      "Chile",
-      "Otro país..."
-  ]
+    name: '',
+    lastname: '',
+    country: '',
+    address: '',
+    city: '',
+    state: '',
+    zipcode: '',
+    email: user ? user.email : '', // Verifica si user está definido antes de acceder a user.email
+  });
 
   const handleChange = async (event) => {
-
-      setUserForm({
-          ...userForm,
-          [event.target.name]: event.target.value
-      })
-
-  }
+    setUserForm({
+      ...userForm,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const sendData = (event) => {
-
-      event.preventDefault()
-
-      userSubmitForm(userForm)
-
-  }
+    event.preventDefault();
+    userSubmitForm(userForm);
+  };
 
   useEffect(() => {
-
-      const updateData = () => {
-
-          return setUserForm({
-              ...userForm,
-              name,
-              lastname,
-              country,
-              address,
-              city,
-              state,
-              zipcode
-          })
-
+    const updateData = () => {
+      if (user) {
+        setUserForm({
+          ...userForm,
+          name: user.name,
+          lastname: user.lastname,
+          country: user.country,
+          address: user.address,
+          city: user.city,
+          state: user.state,
+          zipcode: user.zipcode,
+        });
       }
+    };
 
-      updateData()
+    updateData();
+  }, [user, userForm]); // Añadí user y userForm como dependencias para evitar advertencias de useEffect
 
-  }, [])
+  return (
+    <main className="mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative">
+          <div className="h-1/2 bg-gray-100"></div>
+          <div>
+            <Form onSubmit={sendData}>
+              <Form.Group controlId="formName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  value={userForm.name}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-
-
-    return (
-        <main className="mt-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="relative">
-                    <div className="h-1/2 bg-gray-100"></div>
-                    <div>
-                        <Form onSubmit={(e) => sendData(e)}>
-                            <Form.Group controlId="formName">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Name"
-                                    name="name"
-                                    value={userForm.name}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
-
-                            <Form.Group controlId="formLastName">
+              <Form.Group controlId="formLastName">
                                 <Form.Label>Last Name</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -127,6 +98,4 @@ export const Profile = () => {
             </div>
         </main>
     );
-};
-
-export default Profile;
+}

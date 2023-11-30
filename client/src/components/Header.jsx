@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
 export const Header= () => { 
@@ -23,7 +22,7 @@ export const Header= () => {
             <Nav.Link as={Link} to="/Teacupdesign/product">Product</Nav.Link>
             <Nav.Link as={Link} to="/Teacupdesign/profile">Profile</Nav.Link>
             <Nav.Link as={Link} to="/Teacupdesign/contact">Contact</Nav.Link>
-            <Nav.Link as={Link} to="/Teacupdesign/checkout">Checkout</Nav.Link>
+            <Nav.Link as={Link} to="/Teacupdesign/logout">Logout</Nav.Link>
 
           </Nav>
           <Form className="d-flex">
