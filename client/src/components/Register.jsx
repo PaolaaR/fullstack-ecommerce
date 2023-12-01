@@ -32,7 +32,7 @@ export const Register = () => {
     event.preventDefault();
 
     await registerUser(data);
-    navigate('/Teacupdesign/profile'); // Redirect after registration
+    navigate('/fullstack-ecommerce/profile'); // Redirect after registration
   };
 
   return (

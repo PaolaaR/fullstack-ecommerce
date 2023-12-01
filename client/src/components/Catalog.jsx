@@ -33,7 +33,7 @@ export const Catalog = () => {
             <Card.Title>{mug.name}</Card.Title>
             <Card.Text>{mug.description}</Card.Text>
             <Card.Text>Price: ${mug.price}</Card.Text>
-            <Button as={Link} to={`/Teacupdesign/product/${mug._id}`} variant="primary">
+            <Button as={Link} to={`/fullstack-ecommerce/product/${mug._id}`} variant="primary">
               View Product
             </Button>
           </Card.Body>

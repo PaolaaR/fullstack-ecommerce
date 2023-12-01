@@ -34,21 +34,21 @@ export const App = () => {
       <Routes>
      
     
-      <Route path="/Teacupdesign/profile" element={<PrivateRoute component= {Profile} />} />
+      <Route path="/fullstack-ecommerce/profile" element={<PrivateRoute component= {Profile} />} />
 
-      <Route path="/Teacupdesign/login" element={<AuthRoute component= {Login} />} />
-      <Route path="/Teacupdesign/register" element={<AuthRoute component={Register} />} />
+      <Route path="/fullstack-ecommerce/login" element={<AuthRoute component= {Login} />} />
+      <Route path="/fullstack-ecommerce/register" element={<AuthRoute component={Register} />} />
 
-      <Route path="/Teacupdesign" element={<PublicRoute component={Home} />} />
-      <Route path="/Teacupdesign/catalog" element={<PublicRoute component={Catalog} />} />
+      <Route path="/fullstack-ecommerce" element={<PublicRoute component={Home} />} />
+      <Route path="/fullstack-ecommerce/catalog" element={<PublicRoute component={Catalog} />} />
       
-      <Route path="/Teacupdesign/product/:productId" element={<PublicRoute component ={Product} />} />
-      <Route path="/Teacupdesign/contact" element={<PublicRoute component={Contact} />} />
+      <Route path="/fullstack-ecommerce/product/:productId" element={<PublicRoute component ={Product} />} />
+      <Route path="/fullstack-ecommerce/contact" element={<PublicRoute component={Contact} />} />
       
-      <Route path="/Teacupdesign/bestsellers" element= {<PublicRoute component={BestSellers}/>} />
-      <Route path="/Teacupdesign/checkout" element={<PublicRoute component={Checkout} />} />
+      <Route path="/fullstack-ecommerce/bestsellers" element= {<PublicRoute component={BestSellers}/>} />
+      <Route path="/fullstack-ecommerce/checkout" element={<PublicRoute component={Checkout} />} />
      
-      <Route path="/*" element={<Navigate to='/Teacupdesign' />} />
+      <Route path="/*" element={<Navigate to='/fullstack-ecommerce' />} />
 
       </Routes>
 

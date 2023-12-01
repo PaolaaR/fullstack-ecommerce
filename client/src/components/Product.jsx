@@ -87,7 +87,7 @@ export const Product = () => {
               {user?.email ? (
                 <div id="payment-form"></div>
               ) : (
-                <Link to="/Teacupdesign/register">
+                <Link to="/fullstack-ecommerce/register">
                   <Button variant="danger">If you want to buy, you must create an account</Button>
                 </Link>
               )}
