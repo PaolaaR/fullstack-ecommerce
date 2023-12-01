@@ -85,7 +85,7 @@ export const Profile = () => {
                                     placeholder="email"
                                     name="email"
                                     value={userForm.email}
-                                    readOnly
+                                    onChange={handleChange}
                                 />
                             </Form.Group>
 

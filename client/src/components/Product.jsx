@@ -18,10 +18,7 @@ export const Product = () => {
   useEffect(() => {
     const fetchMug = async () => {
       try {
-        console.log("product id: " + productId)
         const res = await getMug(productId);
-        console.log (productId)
-        console.log('res:', res);
         if (res && Array.isArray(res)) {
           const id = await getPreferenceCheckoutMP({
             items: [
@@ -58,7 +55,7 @@ export const Product = () => {
   }, [productId, getMug, getPreferenceCheckoutMP, user]);
 
   const addCheckout = (id) => {
-    const mp = new window.MercadoPago('TEST-dfefa95d-6ba3-4765-9b5f-e54cbeafd61e', {
+    const mp = new window.MercadoPago('TEST-6f33d03a-a55f-47c9-b364-2db6ea372705', {
       locale: 'es-CL',
     });
 

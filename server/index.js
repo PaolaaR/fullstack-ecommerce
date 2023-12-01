@@ -33,7 +33,7 @@ const mercadopago = require("mercadopago")
 const { update } = require('./models/Mug.model')
 
 mercadopago.configure({
-    access_token: "TEST-1692220363732658-111103-4d1a8c97cb67179282c33c457e4932c8-1545347358"
+    access_token: "TEST-2852776318752517-113018-7fb33fe86c386cf7a0c1d3f925e64447-1544041689"
 })
 
 

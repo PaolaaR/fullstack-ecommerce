@@ -23,6 +23,7 @@ export const Login = () => {
         ...data,
         [event.target.name]: event.target.value
     })
+    
 
 }
 
