@@ -17,7 +17,7 @@ export const BestSellers = () => {
         const shuffledMugs = allMugs.sort(() => Math.random() - 0.5);
 
         
-        const selectedMugs = shuffledMugs.slice(0, 4);
+        const selectedMugs = shuffledMugs.slice(0, 3);
 
         setRandomMugs(selectedMugs);
       } catch (error) {
