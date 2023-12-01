@@ -5,8 +5,7 @@ import { UserContext } from '../context/User/UserContext';
 export const Profile = () => {
   const ctx = useContext(UserContext);
 
-  const { userSubmitForm, user } = ctx; // Renombré user para evitar conflictos con el destructuring anterior
-
+  const { userSubmitForm, user } = ctx; 
   const [userForm, setUserForm] = useState({
     name: '',
     lastname: '',
@@ -15,7 +14,7 @@ export const Profile = () => {
     city: '',
     state: '',
     zipcode: '',
-    email: user ? user.email : '', // Verifica si user está definido antes de acceder a user.email
+    email: user ? user.email : '', 
   });
 
   const handleChange = async (event) => {
@@ -47,55 +46,104 @@ export const Profile = () => {
     };
 
     updateData();
-  }, [user, userForm]); // Añadí user y userForm como dependencias para evitar advertencias de useEffect
+  }, [user, userForm]);
 
   return (
-    <main className="mt-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative">
-          <div className="h-1/2 bg-gray-100"></div>
-          <div>
-            <Form onSubmit={sendData}>
-              <Form.Group controlId="formName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  value={userForm.name}
-                  onChange={handleChange}
-                />
-              </Form.Group>
+    <div style={{ backgroundColor: 'gray',maxWidth: '900px', margin: 'auto', marginTop: '50px', color:'black', border: 'solid 15px orange'}}>
+      <Form onSubmit={sendData}>
+    <Form.Group className="mb-3" >
+      <Form.Label>Name</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter name"
+        name="name"
+        value={userForm.name}
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-              <Form.Group controlId="formLastName">
-                                <Form.Label>Last Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Last Name"
-                                    name="lastname"
-                                    value={userForm.lastname}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
+    <Form.Group className="mb-3" >
+      <Form.Label>Lastname</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter lastname"
+        name="lastname"
+        value={userForm.lastname}
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-                            <Form.Group controlId="formEmail">
-                                <Form.Label>E-mail</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    placeholder="email"
-                                    name="email"
-                                    value={userForm.email}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
+    <Form.Group className="mb-3" >
+      <Form.Label>Country</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter country"
+        name="country"
+        value={userForm.country}
+        onChange={handleChange}
+      />
+    </Form.Group>
 
-                            <Button variant="primary" type="submit">
-                                Save Changes
-                            </Button>
-                        </Form>
-                    </div>
-                </div>
-            </div>
-        </main>
-    );
-}
+    <Form.Group className="mb-3" >
+      <Form.Label>Address</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter address"
+        name="address"
+        value={userForm.address}
+        onChange={handleChange}
+      />
+    </Form.Group>
+
+    <Form.Group className="mb-3" >
+      <Form.Label>City</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter city"
+        name="city"
+        value={userForm.city}
+        onChange={handleChange}
+      />
+    </Form.Group>
+
+    <Form.Group className="mb-3" >
+      <Form.Label>State</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter state"
+        name="state"
+        value={userForm.state}
+        onChange={handleChange}
+      />
+    </Form.Group>
+
+    <Form.Group className="mb-3" >
+      <Form.Label>Zipcode</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Enter zipcode"
+        name="zipcode"
+        value={userForm.zipcode}
+        onChange={handleChange}
+      />
+
+      <Form.Group className="mb-3" >
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          name="email"
+          value={userForm.email}
+          onChange={handleChange}
+        />
+      </Form.Group>
+
+      <Button variant="warning" type="submit">
+        Submit
+      </Button>
+    </Form.Group>
+      </Form>
+    </div>
+  );
+};
+    

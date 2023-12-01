@@ -197,11 +197,11 @@ app.post("/user/create", async (req, res) => {
 app.post("/user/login", async (req, res) => {
 
     // OBTENEMOS EL EMAIL Y EL PASSWORD DE LA PETICIÓN
-    const { email, password } = req.body
+    const { name, password } = req.body
 
     try {
         // ENCONTRAMOS UN USUARIO
-        let foundUser = await Usuario.findOne({ email })
+        let foundUser = await User.findOne({ name })
 
         // SI NO HUBO UN USUARIO ENCONTRADO, DEVOLVEMOS UN ERROR
         if (!foundUser) {

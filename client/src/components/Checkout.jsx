@@ -5,4 +5,3 @@ export const Checkout = () => {
     <div>Checkout</div>
   )
 }
-

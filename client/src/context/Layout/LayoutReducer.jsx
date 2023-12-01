@@ -1,5 +1,5 @@
 
-const reducer = (globalState, action) => {
+export const reducer = (globalState, action) => {
 
     switch(action.type){
 

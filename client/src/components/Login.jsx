@@ -13,7 +13,7 @@ export const Login = () => {
   } = userCtx
 
   const [data, setData] = useState({
-      email: "",
+      name: "",
       password: ""
   })
 
@@ -52,14 +52,14 @@ export const Login = () => {
             
             <div style={{ marginBottom: '15px' }}>
               <h3 style={{ color: '#008000', textAlign: 'center' }}>Login</h3>
-              <label htmlFor="email" style={{ color: '#008000' }}>
-                Email
+              <label htmlFor="name" style={{ color: '#008000' }}>
+                Name
               </label>
               <div className="mt-1">
                 <input 
-                  id="email" 
-                  name="email" 
-                  type="email" 
+                  id="name" 
+                  name="name" 
+                  type="name" 
                   onChange={(e) => { handleChange(e) }}
                   required 
                   style={{ width: '100%', padding: '5px' }}

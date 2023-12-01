@@ -10,6 +10,7 @@ import { BestSellers} from './components/BestSellers';
 import { Checkout } from './components/Checkout';
 import{ Footer } from './components/Footer';
 import { Product } from './components/Product'
+
 import './App.css';
 
 import ProductState from '../src/context/Product/ProductState'
@@ -19,6 +20,7 @@ import LayoutState from '../src/context/Layout/LayoutState'
 import { AuthRoute } from './components/Routes/AuthRoute';
 import { PublicRoute } from './components/Routes/PublicRoute';
 import { PrivateRoute } from './components/Routes/PrivateRoute';
+
 
 
 
