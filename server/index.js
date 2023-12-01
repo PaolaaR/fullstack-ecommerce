@@ -255,7 +255,7 @@ app.get("/user/verify-user", auth, async (req, res) => {
 
     try {
         // CONFIRMAMOS QUE EL USUARIO EXISTA EN BASE DE DATOS Y RETORNAMOS SUS DATOS, EXCLUYENDO EL PASSWORD
-        const user = await users.findById(req.user.email).select("-password")
+        const user = await users.findById(req.user.id).select("-password")
         res.json({ user })
 
     } catch (error) {
