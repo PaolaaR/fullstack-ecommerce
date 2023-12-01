@@ -17,16 +17,28 @@ export const Profile = () => {
     email: user ? user.email : '', 
   });
 
-  const handleChange = async (event) => {
+  const handleChange = (event) => {
     setUserForm({
       ...userForm,
       [event.target.name]: event.target.value,
     });
   };
 
-  const sendData = (event) => {
+  const sendData = async (event) => {
     event.preventDefault();
     userSubmitForm(userForm);
+
+
+  setUserForm({
+      name: '',
+      lastname: '',
+      country: '',
+      address: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      email: user ? user.email : '',
+    });
   };
 
   useEffect(() => {

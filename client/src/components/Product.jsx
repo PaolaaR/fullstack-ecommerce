@@ -32,7 +32,7 @@ export const Product = () => {
             ],
             payer: {
               name: user.name,
-              email: user.email,
+              email: user.password,
             },
           });
 
@@ -84,7 +84,7 @@ export const Product = () => {
               <p>
                 <b>Price</b>: ${price || 0} CLP
               </p>
-              {user?.email ? (
+              {user?.id ? (
                 <div id="payment-form"></div>
               ) : (
                 <Link to="/fullstack-ecommerce/register">

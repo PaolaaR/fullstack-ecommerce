@@ -6,8 +6,8 @@ import { Login } from './components/Login'
 import { Register } from './components/Register'
 import { Catalog } from './components/Catalog';
 import { Profile } from './components/Profile';
+
 import { BestSellers} from './components/BestSellers';
-import { Checkout } from './components/Checkout';
 import{ Footer } from './components/Footer';
 import { Product } from './components/Product'
 
@@ -46,7 +46,8 @@ export const App = () => {
       <Route path="/fullstack-ecommerce/contact" element={<PublicRoute component={Contact} />} />
       
       <Route path="/fullstack-ecommerce/bestsellers" element= {<PublicRoute component={BestSellers}/>} />
-      <Route path="/fullstack-ecommerce/checkout" element={<PublicRoute component={Checkout} />} />
+
+      
      
       <Route path="/*" element={<Navigate to='/fullstack-ecommerce' />} />
 
