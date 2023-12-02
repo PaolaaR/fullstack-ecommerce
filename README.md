@@ -1,4 +1,5 @@
-Aplicación de comercio electrónico de tazones - Ecommerce Mugs
+
+APLICACIÓN DE COMERCIO ELECTRÓNICO DE TAZONES - ECOMMERCE MUGS
 
 Aplicación realizada como proyecto final del Bootcamp Desarrollo Web Fullstack UDD
 
