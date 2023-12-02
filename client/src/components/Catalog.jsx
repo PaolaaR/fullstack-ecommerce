@@ -10,7 +10,7 @@ export const Catalog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3005/get-mugs');
+        const response = await axios.get('https://fullstack-ecommerce-sed7.onrender.com/get-mugs');
         console.log('response:', response);
 
         if (Array.isArray(response.data.mugs)) {

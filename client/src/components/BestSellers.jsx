@@ -10,7 +10,7 @@ export const BestSellers = () => {
   useEffect(() => {
     const fetchRandomMugs = async () => {
       try {
-        const response = await axios.get('http://localhost:3005/get-mugs');
+        const response = await axios.get('https://fullstack-ecommerce-sed7.onrender.com/get-mugs');
         const allMugs = response.data.mugs;
 
         

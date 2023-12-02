@@ -20,7 +20,7 @@ export const ProductState = (props) => {
 
     const getMug = async (id) => {
         
-        const res = await axios.get(`http://localhost:3005/get-mug/${id}`)
+        const res = await axios.get(`https://fullstack-ecommerce-sed7.onrender.com/get-mug/${id}`)
         // const res = await axiosClient.get(`/get-mug/${id}`)
 
         const mug = res.data.mug
