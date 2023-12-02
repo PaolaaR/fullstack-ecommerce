@@ -1,8 +1,24 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+APLICACIÓN DE COMERCIO ELECTRÓNICO DE TAZONES - ECOMMERCE MUGS
 
-Currently, two official plugins are available:
+Aplicación realizada como proyecto final del Bootcamp Desarrollo Web Fullstack UDD
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Considera las siguientes tecnologías:
+
+FRONTEND : ReactJS Context API (Manejo de estados)
+
+BACKEND: Node con ExpressJS
+
+BASE DE DATOS: MongoDB Atlas
+
+Con esta aplicación se busca lograr los siguientes objetivos:
+
+-Manejo de rutas del lado del cliente (Frontend)
+
+-Manejo de estados locales y globales (Frontend) 
+
+-Manejo de rutas en un servidor (Backend) 
+
+-Gestión y flujo de datos en MongoDB 
+
+-Seguridad (Autenticación y autorización)
